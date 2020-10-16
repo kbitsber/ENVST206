@@ -228,7 +228,7 @@ ggplot(data=Ab, aes(x=DATE, y=PRCP))+
 #question 9
 #Aberdeen
 
-ggplot(data = datW, aes(x=NAME, y=TMIN))+ 
+ggplot(data = datW, aes(x=NAME, y=TMAX))+ 
   geom_violin(fill=rgb(0.933,0.953,0.98))+ 
   geom_boxplot(width=0.2,size=0.25, fill="grey90")+
   theme_classic()
@@ -236,11 +236,11 @@ dev.off()
 Ab <- datW[datW$NAME == nameS[1] & datW$ year > 1999,]
 Ab$year <- as.factor(Ab$year)
 #make violin plot
-ggplot(data = sub, aes(x=year, y=TMIN))+ 
+ggplot(data = sub, aes(x=nameS[1], y=TMAX))+ 
   geom_violin(fill=rgb(0.933,0.953,0.98))+
   geom_boxplot(width=0.2,size=0.25, fill="grey90")+ 
   theme_classic()+
-  labs(x="Year", y="TMIN (C)")
+  labs(x= "  ", y="TMAX (C)")
 
 
 
